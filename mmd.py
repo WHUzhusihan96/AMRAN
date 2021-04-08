@@ -47,26 +47,6 @@ def cmmd(source, target, s_label, t_label, kernel_mul=2.0, kernel_num=5, fix_sig
     return loss
 
 
-def wmmd(source, target, s_label, t_label, kernel_mul=2.0, kernel_num=5, fix_sigma=None):
-    batch_size = source.size()[0]
-    weight_ss, weight_tt, weight_st = Weight.cal_weight(s_label, t_label, 6, type='visual')
-    weight_ss = torch.from_numpy(weight_ss).cuda()
-    weight_tt = torch.from_numpy(weight_tt).cuda()
-    weight_st = torch.from_numpy(weight_st).cuda()
-
-    kernels = guassian_kernel(source, target,
-                              kernel_mul=kernel_mul, kernel_num=kernel_num, fix_sigma=fix_sigma)
-    loss = torch.Tensor([0]).cuda()
-    if torch.sum(torch.isnan(sum(kernels))):
-        return loss
-    SS = kernels[:batch_size, :batch_size]
-    TT = kernels[batch_size:, batch_size:]
-    ST = kernels[:batch_size, batch_size:]
-
-    loss += torch.sum( weight_ss * SS + weight_tt * TT - 2 * weight_st * ST )
-    return loss
-
-
 def mmd_rbf_noaccelerate(source, target, kernel_mul=2.0, kernel_num=5, fix_sigma=None):
     batch_size = int(source.size()[0])
     kernels = guassian_kernel(source, target,
