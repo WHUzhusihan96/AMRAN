@@ -4,4 +4,4 @@
 |   mu   |  0.1  |  0.6 |   0   |  0.6  |  0.1  |  0.1  |  0.9  |   1   |  0.1 |  0.9  |  0.4  |  0.1  |
 | epochs |  200  |  200 |  200  |  400  |  400  |  400  |  200  |  200  |  200 |  200  |  200  |  200  |
 
-> You can try different parameters for you own tasks.
+> You can try different parameters for your own tasks.
