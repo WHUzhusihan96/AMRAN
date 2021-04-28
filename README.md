@@ -5,6 +5,11 @@ A deep domain adaptation method for remote sensing cross-scene classification.
 * python 3
 * pytorch 1.0
 
+## Dataset
+Add the dataset selected in paper to this repo. [[BaiduYun](https://pan.baidu.com/s/1WOuXxOe1mav9cKdESsCXDw)] 密码:szu0
+
+You also can use your own data.
+
 ## Usage
 1. The `root_path` is the directory of you dataset. And the dataset please placed as: `./dataset/domain/classes/samples`
 2. You can change the `source_dir` and `test_dir` in `AMRAN.py` to set different transfer tasks.
