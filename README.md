@@ -8,7 +8,7 @@ A deep domain adaptation method for remote sensing cross-scene classification.
 ## Dataset
 Add the dataset selected in paper to this repo. [[BaiduYun](https://pan.baidu.com/s/1WOuXxOe1mav9cKdESsCXDw)] 密码:szu0
 
-You also can use your own data.
+You can also use your own data with this code.
 
 ## Usage
 1. The `root_path` is the directory of you dataset. And the dataset please placed as: `./dataset/domain/classes/samples`
